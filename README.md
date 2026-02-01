@@ -15,7 +15,6 @@
 
 Библиотека разработана с упором на чистый код и модульность, используя современный синтаксис C# (версии 8.0+), доступный в Unity 6.
 
-Ключевой подход: работа с интерфейсами через переменные, чтобы код выглядел лаконично и красиво (без постоянных приведений типов ((Interface)this)).
 
 
 
@@ -58,36 +57,20 @@ using UnityEngine;
 
 using UnityCharacterCore.DamagePlayer;
 
-
-
 public class EnemyHealth : MonoBehaviour, IDamagePlayer
-
 {
+   public float damagePlayer => 10f; 
 
-&nbsp;   public float damagePlayer => 10f; 
+   public void DamagePlayer()
+   {
+       Debug.Log($"Получен урон: {damagePlayer}");
+   }
 
-
-
-&nbsp;   public void DamagePlayer()
-
-&nbsp;   {
-
-&nbsp;       Debug.Log($"Получен урон: {damagePlayer}");
-
-&nbsp;   }
-
-
-
-&nbsp;   void Start()
-
-&nbsp;   {
-
-&nbsp;       IDamagePlayer entity = this; 
-
-&nbsp;       entity.DamagePlayer(); 
-
-&nbsp;   }
-
+   void Start()
+   {
+       IDamagePlayer entity = this; 
+       entity.DamagePlayer(); 
+   }
 }
 
 ```

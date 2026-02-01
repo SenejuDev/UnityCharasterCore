@@ -88,29 +88,17 @@ public class EnemyHealth : MonoBehaviour, IDamagePlayer
 
 
 ```csharp
-
 using UnityEngine;
 
-
-
 namespace UnityCharacterCore.Enemy
-
 {
-
-&nbsp;   public enum EnemyType
-
-&nbsp;   {
-
-&nbsp;       Normal,
-
-&nbsp;       Elite,
-
-&nbsp;       Boss
-
-&nbsp;   }
-
+    public enum EnemyType
+    {
+        Normal,
+        Elite,
+        Boss
+    }
 }
-
 ```
 
 
@@ -124,29 +112,19 @@ namespace UnityCharacterCore.Enemy
 
 
 ```csharp
+using UnityEngine;
 
 namespace UnityCharacterCore.EnemyCharasters
-
 {
-
-&nbsp;   public interface IEnemyCharasters
-
-&nbsp;   {
-
-&nbsp;       string NameEnemy { get;}
-
-&nbsp;       float HealthEnemy { get;}
-
-&nbsp;       float damageEnemy { get; }
-
-&nbsp;       void InfoEnemyHealth();
-
-&nbsp;       void DamageEnemy();
-
-&nbsp;   }
-
+    public interface IEnemyCharasters
+    {
+        string NameEnemy {  get;}
+        float HealthEnemy { get;}
+        float damageEnemy { get; }
+        void InfoEnemyHealth();
+        void DamageEnemy();
+    }
 }
-
 ```
 
 
@@ -160,29 +138,18 @@ namespace UnityCharacterCore.EnemyCharasters
 Код интерфейса:
 
 
-
 ```csharp
-
 using UnityEngine;
 
-
-
 namespace UnityCharacterCore.HealthPlayer
-
 {
+    public interface IHealthPlayer
+    {
+        float HealthPlayer { get; }
 
-&nbsp;   public interface IHealthPlayer
-
-&nbsp;   {
-
-&nbsp;       float HealthPlayer { get; }
-
-&nbsp;       void InfoHealthPlayer();
-
-&nbsp;   }
-
+         void InfoHealthPlayer();
+    }
 }
-
 ```
 
 
@@ -195,46 +162,26 @@ namespace UnityCharacterCore.HealthPlayer
 
 Код интерфейса:
 
-
-
 ```csharp
-
 using UnityEngine;
 
-
-
 namespace UnityCharacterCore.Level
-
 {
+    public interface ILevel
+    {
+        int level { get; }
+        int maxLevel { get; }
+        int minLevel { get; }
+        int Exp {  get; }
+        int MaxExp { get; }
+        int MinExp { get; }
 
-&nbsp;   public interface ILevel
-
-&nbsp;   {
-
-&nbsp;       int level { get; }
-
-&nbsp;       int maxLevel { get; }
-
-&nbsp;       int minLevel { get; }
-
-&nbsp;       int Exp { get; }
-
-&nbsp;       int MaxExp { get; }
-
-&nbsp;       int MinExp { get; }
-
-&nbsp;       void OnLevelChange();
-
-&nbsp;       void OnLevelInfo();
-
-&nbsp;       void GetExp();
-
-&nbsp;       void GetMaxExp();
-
-&nbsp;   }
-
+        void OnLevelChange();
+        void OnLevelInfo();
+        void GetExp();
+        void GetMaxExp();
+    }
 }
-
 ```
 
 
@@ -243,33 +190,23 @@ namespace UnityCharacterCore.Level
 
 6\. Система имен: INameable
 
-Интерфейс для объектов, которым требуется имя (например, игрок, NPC, предмет).
+Интерфейс для объектов, которым требуется имя (Игрока).
 
 Код интерфейса:
 
-
-
 ```csharp
-
 using UnityEngine;
 
-
-
 namespace UnityCharacterCore.Name
-
 {
+    public interface INameable
+    {
+        string NamePlayer { get; }
 
-&nbsp;   public interface INameable
-
-&nbsp;   {
-
-&nbsp;       string NamePlayer { get; }
-
-&nbsp;       void NamePlayerInfo();
-
-&nbsp;   }
-
+        void NamePlayerInfo();
+    }
 }
+
 ```
 
 
@@ -284,44 +221,26 @@ namespace UnityCharacterCore.Name
 
 Код интерфейса:
 
-
-
 ```csharp
 
 using UnityEngine;
 
-
-
 namespace UnityCharacterCore.Rank
-
 {
+    public interface IRank
+    {
+        int rank { get; }
+        int maxRank { get; }
+        int minRank { get; }
+        int Exp {  get; }
+        int maxExp { get; }
+        int minExp { get; }
 
-&nbsp;   public interface IRank
-
-&nbsp;   {
-
-&nbsp;       int rank { get; }
-
-&nbsp;       int maxRank { get; }
-
-&nbsp;       int minRank { get; }
-
-&nbsp;       int Exp { get; }
-
-&nbsp;       int maxExp { get; }
-
-&nbsp;       int minExp { get; }
-
-&nbsp;       void GetCurrentRank();
-
-&nbsp;       void GetMaxRank();
-
-&nbsp;       void GetCurrentExp();
-
-&nbsp;       void GetExpToNextRank();
-
-&nbsp;   }
-
+        void GetCurrentRank();
+        void GetMaxRank();
+        void GetCurrentExp();
+        void GetExpToNextRank();
+    }
 }
 
 ```

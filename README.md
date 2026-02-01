@@ -35,24 +35,15 @@
 
 using UnityEngine;
 
-
-
 namespace UnityCharacterCore.DamagePlayer
-
 {
+    public interface IDamagePlayer
+    {
+        float damagePlayer { get; }
 
-&nbsp;   public interface IDamagePlayer
-
-&nbsp;   {
-
-&nbsp;       float damagePlayer { get; }
-
-&nbsp;       void DamagePlayer();
-
-&nbsp;   }
-
+        void DamagePlayer();
+    }
 }
-
 ```
 
 
